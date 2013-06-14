@@ -1,0 +1,18 @@
+<apex:page controller="MyPageController6_6">
+<apex:form >
+  <apex:pageBlock title="Sample Code">
+    <apex:pageBlockButtons >
+      <apex:commandButton action="{!doSomething}"
+        value="Do Something" />
+    </apex:pageBlockButtons>
+    <apex:pageBlockTable value="{!contacts}" var="contact">
+      <apex:column headerValue="Selected">
+        <apex:inputCheckbox value="{!contact.selected}" />
+      </apex:column>
+      <apex:column headerValue="Contact Name">
+        {!contact.data.Name}
+      </apex:column>
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+</apex:form>
+</apex:page>

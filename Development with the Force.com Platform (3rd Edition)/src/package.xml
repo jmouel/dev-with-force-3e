@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>*</members>
+        <members>ForceStyledComponentsControllerExtension</members>
+        <members>MyPageController6_1</members>
+        <members>MyPageController6_6</members>
+        <members>MyPageController6_8</members>
+        <members>SkillsMatrixController</members>
+        <members>TestSkillsMatrixController</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>*</members>
+        <members>ForceStyledComponents</members>
+        <members>MyPage</members>
+        <members>MyPage6_1</members>
+        <members>MyPage6_3</members>
+        <members>MyPage6_4</members>
+        <members>MyPage6_6</members>
+        <members>MyPage6_8</members>
+        <members>Skills_Matrix</members>
         <name>ApexPage</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomApplication</name>
-    </types>
-    <types>
-        <members>Contact</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>CustomTab</name>
-    </types>
-    <types>
-        <members>Services_Manager</members>
-        <members>Services_Manager/force_logo.png</members>
-        <name>Document</name>
     </types>
     <version>27.0</version>
 </Package>

@@ -1,0 +1,7 @@
+<apex:page standardController="Project__c"
+  extensions="MyPageController6_8">
+  <apex:form >
+    <apex:commandButton action="{!doSomething}"
+      value="Do Something" />
+  </apex:form>
+</apex:page>

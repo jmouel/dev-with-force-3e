@@ -1,0 +1,38 @@
+<apex:page controller="SkillsMatrixController"
+  tabStyle="Skill__c">
+  <style>
+  .contactLabel { padding-right: 15px; }
+  .goButton { margin-left: 10px; }
+  </style>
+  <apex:sectionHeader title="Services Manager"
+    subtitle="Skills Matrix" />
+  <apex:pageMessages />
+  <apex:form id="form">
+  <apex:outputLabel value="Contact:" for="selectedContactId"
+    styleClass="contactLabel" />
+  <apex:selectList id="selectedContactId" title="Contact"
+    value="{!selectedContactId}" size="1">
+    <apex:selectOptions value="{!contactOptions}" />
+  </apex:selectList>
+  <apex:commandButton action="{!refresh}" value="Go!"
+    styleClass="goButton" />
+  <p />
+  <apex:pageBlock title="Skills">
+    <apex:pageBlockButtons >
+      <apex:commandButton action="{!save}" value="Save"
+        disabled="{!NOT isEditable}" />
+    </apex:pageBlockButtons>
+    <apex:pageBlockTable value="{!selectedSkills}" var="skill"
+      rendered="{!selectedContactId != ''}">
+      <apex:column value="{!skill.Type__c}" />
+      <apex:column headerValue="Rating">
+        <apex:outputField value="{!skill.Rating__c}"
+          rendered="{!NOT isEditable}" />
+        <apex:inputField value="{!skill.Rating__c}"
+          rendered="{!isEditable}" />
+      </apex:column>
+      <apex:column value="{!skill.LastModifiedDate}" />
+    </apex:pageBlockTable>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

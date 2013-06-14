@@ -1,0 +1,7 @@
+<apex:page standardController="Project__c">
+  The current project is: {!Project__c.Name}
+  <apex:form >
+    <apex:commandButton action="{!edit}" value="Edit {!Project__c.Name}" />
+    <apex:commandButton action="{!list}" value="Go To List" />
+  </apex:form>
+</apex:page>

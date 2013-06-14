@@ -1,0 +1,66 @@
+<apex:page standardController="Contact"
+  recordSetVar="contacts"
+  extensions="ForceStyledComponentsControllerExtension"
+  action="{!initPage}">
+<apex:form >
+<apex:sectionHeader title="sectionHeader.title"
+  subtitle="subtitle"
+  description="sectionHeader.description"
+  help="http://developer.force.com" />
+<apex:pageMessages />
+<apex:pageBlock title="pageBlock.title"
+  helpUrl="http://developer.force.com"
+  helpTitle="pageBlock.helpTitle">
+  <apex:pageBlockButtons >
+    <apex:commandButton action="{!save}"
+      value="pageBlockButtons 1"/>
+    <apex:commandButton action="{!save}"
+      value="pageBlockButtons 2" disabled="true" />
+  </apex:pageBlockButtons>
+  <apex:pageBlockTable var="r" value="{!contacts}"
+    title="pageBlockTable.title" rows="1">
+    <apex:column >column 1</apex:column>
+    <apex:column >column 2</apex:column>
+    <apex:column >column 3</apex:column>
+  </apex:pageBlockTable>
+  <p />
+  <apex:pageBlockSection title="pageBlockSection.title"
+    columns="2">
+    <apex:pageBlockSectionItem >
+      <apex:outputPanel >Label1</apex:outputPanel>
+      <apex:outputPanel >Field1</apex:outputPanel>
+    </apex:pageBlockSectionItem>
+    <apex:pageBlockSectionItem >
+      <apex:outputPanel >Label2</apex:outputPanel>
+      <apex:outputPanel >Field2</apex:outputPanel>
+    </apex:pageBlockSectionItem>
+  </apex:pageBlockSection>
+</apex:pageBlock>
+<p />
+<apex:tabPanel switchType="client" selectedTab="name2">
+  <apex:tab label="tab 1"
+    name="name1">tabPanel tab 1</apex:tab>
+  <apex:tab label="tab 2"
+    name="name2">tabPanel tab 2</apex:tab>
+</apex:tabPanel>
+<p />
+<apex:toolbar >
+  <apex:outputText >toolbar</apex:outputText>
+  <apex:outputLink value="http://developer.force.com">
+    outputLink 1</apex:outputLink>
+  <apex:toolbarGroup itemSeparator="line" location="right">
+    <apex:outputLink value="http://">outputLink 2</apex:outputLink>
+    <apex:outputLink value="http://">outputLink 3</apex:outputLink>
+  </apex:toolbarGroup>
+</apex:toolbar>
+<p />
+<apex:panelBar >
+  <apex:panelBarItem label="panelBarItem.label 1">panelBarItem 1
+  </apex:panelBarItem>
+  <apex:panelBarItem label="panelBarItem.label 2">panelBarItem 3
+  </apex:panelBarItem>
+  <apex:panelBarItem label="panelBarItem.label 3">panelBarItem 3
+  </apex:panelBarItem>
+</apex:panelBar>
+</apex:form>
+</apex:page>
