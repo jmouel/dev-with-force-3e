@@ -1,0 +1,13 @@
+<apex:page controller="MyPageController7_16">
+<pre>
+&lt;projects&gt;
+  <apex:repeat value="{!records}" var="record">
+  &lt;project&gt;
+    <apex:repeat value="{!fields}" var="field">
+    &lt;{!field}&gt;{!record[field]}&lt;/{!field}&gt;
+    </apex:repeat>
+  &lt;/project&gt;
+  </apex:repeat>
+&lt;/projects&gt;
+</pre>
+</apex:page>

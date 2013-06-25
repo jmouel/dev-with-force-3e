@@ -1,0 +1,13 @@
+<apex:page controller="MyPageController7_3">
+  <apex:outputPanel id="result">
+    <apex:pageMessages />
+  </apex:outputPanel>
+  <apex:actionStatus id="status"
+    startText="Started" stopText="Stopped" />
+  <apex:form >
+    <apex:inputText >
+      <apex:actionSupport action="{!timesTwo}"
+        event="onfocus" reRender="result" status="status" />
+    </apex:inputText>
+  </apex:form>
+</apex:page>

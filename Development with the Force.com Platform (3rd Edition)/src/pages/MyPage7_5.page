@@ -1,0 +1,9 @@
+<apex:page controller="MyPageController7_3">
+  <apex:outputPanel id="result">
+    <apex:pageMessages />
+  </apex:outputPanel>
+  <apex:form >
+    <apex:actionPoller interval="5" action="{!timesTwo}"
+      reRender="result" />
+  </apex:form>
+</apex:page>

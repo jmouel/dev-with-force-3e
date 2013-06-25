@@ -1,0 +1,14 @@
+<apex:page controller="MyPageController7_3">
+  <apex:outputPanel id="result">
+    <apex:pageMessages />
+    <a onclick="timesTwoFunction('{!value}'); return false;">
+      Run
+    </a>
+  </apex:outputPanel>
+  <apex:form >
+    <apex:actionFunction name="timesTwoFunction"
+      action="{!timesTwo}" reRender="result">
+      <apex:param name="arg1" value="" assignTo="{!value}" />
+    </apex:actionFunction>
+  </apex:form>
+</apex:page>

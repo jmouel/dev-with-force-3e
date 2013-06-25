@@ -1,0 +1,47 @@
+<apex:page controller="MyPageController7_20">
+<style>
+.toolbar { margin-bottom: 20px; }
+td { padding: 5px; }
+</style>
+<script>
+function ProjectListCtrl($scope, $rootScope) {
+  MyPageController7_x.load(function(result, event) {
+    if (event.status) {
+      $scope.projects = result;
+      $rootScope.$apply();
+    }
+  }, { escape: false });
+  $scope.orderProp = 'CreatedDate';
+}
+</script>
+<apex:pageBlock tabStyle="Project__c" title="Projects">
+<apex:outputPanel html-ng-app="" 
+  html-ng-controller="ProjectListCtrl">
+  <div class="toolbar">
+    Search: <input ng-model="query" />
+    Sort by:
+    <select ng-model="orderProp">
+      <option value="Name">Alphabetical</option>
+      <option value="CreatedDate">Newest</option>
+    </select>
+  </div>
+  <table>
+    <tr ng-repeat="project in projects
+      | filter:query | orderBy:orderProp">
+      <td>
+        <apex:outputText value="{{project.Name}}" />
+      </td>
+      <td>
+        <apex:outputText value="{{project.Location__c}}" />
+      </td>
+      <td>
+        <apex:outputText value="{{project.CreatedDate | date}}" />
+      </td>
+    </tr>
+  </table>
+</apex:outputPanel>
+</apex:pageBlock>
+  <script
+    src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js">
+  </script>
+</apex:page>

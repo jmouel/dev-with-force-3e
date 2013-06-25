@@ -1,0 +1,10 @@
+<apex:page >
+  <apex:composition template="MyPage7_11">
+    <apex:define name="header">
+      Overriding the header content
+    </apex:define>
+    <apex:define name="body">
+      This is the body content
+    </apex:define>
+</apex:composition>
+</apex:page>

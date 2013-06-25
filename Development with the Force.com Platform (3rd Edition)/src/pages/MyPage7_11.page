@@ -1,0 +1,9 @@
+<apex:page >
+  <apex:insert name="header">
+    <h1>Header</h1>
+  </apex:insert>
+  <hr /><apex:insert name="body" />
+  <hr /><apex:insert name="footer">
+    Inheriting the footer content
+  </apex:insert>
+</apex:page>

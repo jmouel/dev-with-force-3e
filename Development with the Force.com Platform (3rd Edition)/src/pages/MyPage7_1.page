@@ -1,0 +1,10 @@
+<apex:page controller="MyPageController7_1">
+  <apex:form >
+    <apex:commandButton action="{!increment}" value="Increment"
+      reRender="result">
+      <apex:param assignTo="{!amount}" value="2" />
+    </apex:commandButton>
+    <apex:outputPanel id="result">The value is: {!value}
+    </apex:outputPanel>
+  </apex:form>
+</apex:page>

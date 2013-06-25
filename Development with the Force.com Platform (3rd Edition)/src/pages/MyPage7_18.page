@@ -1,0 +1,9 @@
+<apex:page controller="MyPageController7_18">
+  <apex:form >
+    <apex:selectList value="{!selectedObject}" size="1">
+      <apex:selectOptions value="{!availableObjects}"/>
+    </apex:selectList>
+    <apex:commandButton value="Refresh" action="{!refresh}" />
+  </apex:form>
+  <apex:dynamicComponent componentValue="{!component}"/>
+</apex:page>

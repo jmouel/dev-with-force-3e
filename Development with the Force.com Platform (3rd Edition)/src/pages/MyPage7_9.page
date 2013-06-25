@@ -1,0 +1,22 @@
+<apex:page controller="MyPageController7_3">
+  <script type="text/javascript">
+    function start() {
+      document.getElementById("{!$Component.myStatus}").innerHTML = 'Started';
+    }
+    function stop() {
+      document.getElementById("{!$Component.myStatus}").innerHTML = 'Stopped';
+    }
+  </script>
+  <apex:outputPanel id="result">
+    <apex:pageMessages />
+  </apex:outputPanel>
+  <apex:actionStatus id="status"
+    onStart="start();" onStop="stop();" />
+  <apex:outputPanel id="myStatus"></apex:outputPanel>
+  <apex:form >
+    <apex:inputText >
+      <apex:actionSupport action="{!timesTwo}"
+        event="onfocus" reRender="result" status="status" />
+    </apex:inputText>
+  </apex:form>
+</apex:page>

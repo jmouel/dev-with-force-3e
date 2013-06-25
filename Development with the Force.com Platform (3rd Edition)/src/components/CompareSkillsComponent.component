@@ -1,0 +1,22 @@
+<apex:component controller="CompareSkillsController">
+  <apex:attribute name="skillType" description="Type of skill"
+    type="String" required="true" assignTo="{!skill}" />
+  <apex:attribute name="contactId"
+    description="Id of contact to compare with"
+    type="String" required="true" assignTo="{!contact}" />
+  <apex:pageBlock >
+    <apex:pageBlockSection collapsible="false" columns="1">
+      <apex:facet name="header">
+        Other Resources with {!skillType}
+        <span style="padding-left: 30px;">
+          <a onclick="hideOverlay(); return false;"
+          href="" style="text-decoration: underline;">Hide</a>
+        </span>
+      </apex:facet>
+      <apex:pageBlockTable value="{!data}" var="item">
+        <apex:column value="{!item.Contact__r.Name}" />
+        <apex:column value="{!item.Rating__c}" />
+      </apex:pageBlockTable>
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+</apex:component>
