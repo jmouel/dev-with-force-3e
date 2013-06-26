@@ -5,7 +5,7 @@ td { padding: 5px; }
 </style>
 <script>
 function ProjectListCtrl($scope, $rootScope) {
-  MyPageController7_x.load(function(result, event) {
+  MyPageController7_20.load(function(result, event) {
     if (event.status) {
       $scope.projects = result;
       $rootScope.$apply();
