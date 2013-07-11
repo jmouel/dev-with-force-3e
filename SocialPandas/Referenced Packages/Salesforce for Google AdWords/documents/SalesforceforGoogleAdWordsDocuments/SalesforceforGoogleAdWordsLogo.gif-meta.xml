@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Salesforce for Google AdWords Logo</description>
+    <internalUseOnly>false</internalUseOnly>
+    <keywords>google adwords</keywords>
+    <name>Salesforce for Google AdWords Logo</name>
+    <public>true</public>
+</Document>

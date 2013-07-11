@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <frameHeight>6000</frameHeight>
+    <hasSidebar>false</hasSidebar>
+    <label>Google AdWords Setup</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom14: Hands</motif>
+    <url>https://sfma.salesforce.com/secure/sso?action=/signup/register&amp;sid={!API.Session_ID}&amp;surl={!API.Partner_Server_URL_70}&amp;oid={!Organization.Id}&amp;uid={!User.Id} &amp;usid={!User.Session_ID}&amp;oname={!Organization.Name}&amp;pkg=MANAGED_V1</url>
+    <urlEncodingKey>UTF-8</urlEncodingKey>
+</CustomTab>

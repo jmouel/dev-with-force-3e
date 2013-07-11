@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_LEAD_FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_LEAD_COMPANY</field>
+    </columns>
+    <columns>
+        <field>FK_LEAD_STATUS</field>
+    </columns>
+    <columns>
+        <field>FK_LEAD_CONVERTED</field>
+    </columns>
+    <columns>
+        <field>FK_LEAD_LAST_ACTIVITY</field>
+    </columns>
+    <columns>
+        <field>FK_LEAD_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <description>Show all Leads from Google AdWords, organized by Ad Group</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CUST_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Ad Group Lead Report</name>
+    <reportType>CustomEntity$Ad_Group__c@Ad_Group__c.Lead__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
