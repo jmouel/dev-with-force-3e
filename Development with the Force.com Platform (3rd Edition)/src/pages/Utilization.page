@@ -1,0 +1,39 @@
+<apex:page controller="UtilizationController">
+<apex:sectionHeader title="Services Manager"
+  subtitle="Utilization" />
+<apex:form >
+<apex:pageMessages id="msgs" />
+<apex:pageBlock id="util">
+<apex:pageBlockButtons >
+  <apex:commandButton action="{!calculate}"
+    value="Calculate" rerender="msgs, util" />
+</apex:pageBlockButtons>
+<apex:pageBlockSection columns="1">
+  <apex:pageBlockSectionItem >
+    <apex:outputLabel value="Start Date" />
+    <apex:inputField value="{!card1.Week_Ending__c}" />
+  </apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+  <apex:outputLabel value="End Date" />
+  <apex:inputField value="{!card2.Week_Ending__c}" />
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+  <apex:outputLabel value="Share Anonymously" />
+  <apex:inputCheckbox value="{!shared}" />
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+  <apex:outputLabel value="Total Hours" />
+  <apex:outputText value="{!totalHours}" />
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+  <apex:outputLabel value="Total Resources" />
+  <apex:outputText value="{!totalResources}" />
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+  <apex:outputLabel value="Utilization (%)" />
+  <apex:outputText value="{!utilization}" />
+</apex:pageBlockSectionItem>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -33,14 +33,14 @@
       <apex:column value="{!skill.Type__c}" />
       <apex:column headerValue="Rating">
         <apex:image value="/img/msg_icons/info16.png"
-		  style="margin-top: 2px; margin-right: 10px;">
-		  <apex:actionSupport event="onmouseover"
-		    action="{!refreshCompareSkills}" rerender="compareSkills"
-		    oncomplete="showOverlay(event);" onsubmit="hideOverlay();">
-		    <apex:param name="p1" value="{!skill.Type__c}"
-		    assignTo="{!selectedSkillType}" />
-		  </apex:actionSupport>
-		</apex:image>
+          style="margin-top: 2px; margin-right: 10px;">
+          <apex:actionSupport event="onmouseover"
+            action="{!refreshCompareSkills}" rerender="compareSkills"
+            oncomplete="showOverlay(event);" onsubmit="hideOverlay();">
+            <apex:param name="p1" value="{!skill.Type__c}"
+            assignTo="{!selectedSkillType}" />
+          </apex:actionSupport>
+        </apex:image>
         <apex:outputField value="{!skill.Rating__c}"
           rendered="{!NOT isEditable}" />
         <apex:inputField value="{!skill.Rating__c}"
