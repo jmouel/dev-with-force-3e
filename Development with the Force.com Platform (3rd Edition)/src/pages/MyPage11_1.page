@@ -1,0 +1,43 @@
+<apex:page controller="MyPageController11_1">
+  <apex:form id="form">
+    <apex:includeScript value="{!URLFOR($Resource.cometd,
+      'cometd.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.cometd,
+      'jquery-1.5.1.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.cometd,
+      'jquery.cometd.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.cometd,
+      'json2.js')}"/>
+    <apex:sectionHeader title="Force.com Streaming API Example" />
+    <br />
+    <apex:commandButton action="{!start}" value="Start"
+      rerender="form" rendered="{!NOT started}" />
+     <apex:commandButton action="{!stop}" value="Stop"
+      rendered="{!started}" />
+    <apex:outputPanel id="comet" rendered="{!started}">
+      <script type="text/javascript">
+(function($) {
+  $(document).ready(function() {
+    $.cometd.init({
+      url: window.location.protocol + '//'+window.location.hostname + '/cometd/28.0/',
+      requestHeaders: { Authorization: 'OAuth {!$Api.Session_ID}'}
+    });
+    $.cometd.subscribe('/topic/TimecardUpdates', function(message) {
+      $('#content').append(
+      '<tr><td>' + JSON.stringify(message.channel) + '</td>' +
+      '<td>' + JSON.stringify(message.data.sobject.Name) + '</td>' +
+      '<td>' + JSON.stringify(message.data.sobject.Id) + '</td>' +
+      '<td>' + JSON.stringify(message.data.event.type) + '</td>' +
+      '<td>' + JSON.stringify(message.data.event.createdDate) + '</td>' + 
+      '</tr>');
+      });
+    });
+})(jQuery)
+       </script>
+    </apex:outputPanel>
+    <p /> 
+    <table id="content" width="80%"><tr><th>Channel</th><th>Name</th>
+      <th>Id</th><th>Type</th><th>Created</th></tr>
+     </table>
+  </apex:form>
+</apex:page>

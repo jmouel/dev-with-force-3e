@@ -1,0 +1,36 @@
+<apex:page controller="MyPageController11_16">
+  <apex:form id="form">
+  <apex:pageBlock title="Force.com Tooling API Example">
+  <apex:pageBlockSection columns="2">
+  <apex:pageBlockTable value="{!classes}" var="c">
+    <apex:column >
+      <apex:commandLink value="Edit" action="{!edit}"
+        rerender="editor">
+        <apex:param name="editClassId"
+          assignTo="{!editClassId}" value="{!c.Id}" />
+      </apex:commandLink>
+    </apex:column>
+    <apex:column value="{!c.Name}" />
+    <apex:column value="{!c.IsValid}" />
+  </apex:pageBlockTable>
+  <apex:outputPanel id="editor">
+    <apex:inputTextArea id="editBody" rows="15" cols="90"
+      value="{!editBody}" disabled="{!editClassId == NULL}" />
+    <p/><apex:commandButton value="Save" action="{!save}" 
+      disabled="{!editClassId == NULL}" rerender="editor" />
+    <p/>
+    ContainerId: {!containerId},
+    RequestId: {!requestId}<br />
+    <apex:commandButton value="Refresh Status" action="{!refresh}"
+      disabled="{!requestId == NULL}" rerender="editor" />
+    <apex:commandButton value="Start Over" action="{!reset}" 
+      disabled="{!containerId == NULL}" />
+    <p/>
+    <textarea disabled="true" rows="10" cols="90">
+      {!log}
+    </textarea>
+  </apex:outputPanel>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>
