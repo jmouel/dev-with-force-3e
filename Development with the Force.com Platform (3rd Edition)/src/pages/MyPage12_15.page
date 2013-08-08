@@ -1,0 +1,24 @@
+<apex:page controller="MyPageController12_15">
+<style>
+img { margin: 4px; width: 25px; }
+.actor { font-weight: bold; }
+.comments { margin-left: 40px; }
+</style>
+<apex:repeat value="{!feedItems}" var="feedItem">
+<div>
+  <apex:image url="{!feedItem.photoUrl}"/>
+  <span class="actor">{!feedItem.actor.name}</span>: 
+  <span class="text">{!feedItem.body.text}</span>
+  <apex:outputPanel >
+    <apex:repeat value="{!feedItem.comments.comments}"
+     var="comment">
+      <div class="comments">
+        <apex:image url="{!comment.user.photo.smallPhotoUrl}"/>
+        <span class="actor">{!comment.user.name}</span>:
+        <span class="text">{!comment.body.text}</span>
+      </div>
+    </apex:repeat>
+  </apex:outputPanel>
+</div>
+</apex:repeat>
+</apex:page>

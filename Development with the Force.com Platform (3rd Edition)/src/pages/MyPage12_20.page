@@ -1,0 +1,7 @@
+<apex:page standardController="Project__c">
+  <apex:sectionHeader title="Project"
+    subtitle="{!record.Id}" />
+  <apex:pageBlock title="Chatter Components">
+    <chatter:feedWithFollowers entityId="{!record.Id}" />
+  </apex:pageBlock>
+</apex:page>

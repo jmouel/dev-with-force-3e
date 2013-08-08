@@ -1,0 +1,5 @@
+<apex:page standardController="Project__c"
+  extensions="FollowProjectControllerExtension"
+  action="{!followProject}">
+  <apex:pageMessages />
+</apex:page>
