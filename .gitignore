@@ -1,4 +1,31 @@
 Development with the Force.com Platform (2nd Edition)
 .metadata
 .settings
-
+Development with the Force.com Platform (3rd Edition)/src/classes/AppUtil*
+Development with the Force.com Platform (3rd Edition)/src/classes/AppController*
+Development with the Force.com Platform (3rd Edition)/src/classes/BaseConfig*
+Development with the Force.com Platform (3rd Edition)/src/classes/ContentController*
+Development with the Force.com Platform (3rd Edition)/src/classes/DetailController*
+Development with the Force.com Platform (3rd Edition)/src/classes/FooterController*
+Development with the Force.com Platform (3rd Edition)/src/classes/HeaderController*
+Development with the Force.com Platform (3rd Edition)/src/classes/ListController*
+Development with the Force.com Platform (3rd Edition)/src/classes/NavController*
+Development with the Force.com Platform (3rd Edition)/src/classes/PageController*
+Development with the Force.com Platform (3rd Edition)/src/classes/RemoteRequest*
+Development with the Force.com Platform (3rd Edition)/src/classes/RemoteResponse*
+Development with the Force.com Platform (3rd Edition)/src/classes/SFDCApiClient*
+Development with the Force.com Platform (3rd Edition)/src/classes/SFDCPartnerSoap*
+Development with the Force.com Platform (3rd Edition)/src/classes/SObject*
+Development with the Force.com Platform (3rd Edition)/src/classes/SchemaManager*
+Development with the Force.com Platform (3rd Edition)/src/classes/TestClass*
+Development with the Force.com Platform (3rd Edition)/src/components/App.*
+Development with the Force.com Platform (3rd Edition)/src/components/Content.*
+Development with the Force.com Platform (3rd Edition)/src/components/Detail.*
+Development with the Force.com Platform (3rd Edition)/src/components/Footer.*
+Development with the Force.com Platform (3rd Edition)/src/components/Header.*
+Development with the Force.com Platform (3rd Edition)/src/components/List.*
+Development with the Force.com Platform (3rd Edition)/src/components/Nav.*
+Development with the Force.com Platform (3rd Edition)/src/components/Page.*
+Development with the Force.com Platform (3rd Edition)/src/pages/MobilePage*
+Development with the Force.com Platform (3rd Edition)/src/pages/MobileSample*
+Development with the Force.com Platform (3rd Edition)/src/pages/SplitViewTemplate*
