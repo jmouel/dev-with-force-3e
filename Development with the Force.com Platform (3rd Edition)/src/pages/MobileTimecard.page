@@ -1,0 +1,113 @@
+<apex:page showHeader="false" standardStylesheets="false"
+  sidebar="false"
+  controller="MobileTimecardController">
+<head>
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1.0,
+    maximum-scale=1.0,user-scalable=0"/>
+<link
+href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap.css"
+rel="stylesheet" />
+<style>
+input[type="number"] { width: 30px; }
+</style>
+</head>
+<body>
+<script>
+function MobileTimecardCtrl($scope, $rootScope, $location) {
+  MobileTimecardController.load(function(result, event) {
+    if (event.status) {
+      $scope.timecards = result;
+      $rootScope.$apply();
+    }
+  }, { escape: false });
+  $scope.navClass = function(page) {
+    var currentRoute = $location.path().substring(1) || '';
+    return page === currentRoute ? 'active' : '';
+  }
+  $scope.nav = function(timecardId) {
+    $location.path(timecardId);
+    for (var idx in $scope.timecards) {
+      if ($scope.timecards[idx].Id == timecardId) {
+        $scope.edit = $scope.timecards[idx];
+        $scope.readOnly = $scope.edit.Status__c == 'Submitted' ||
+          $scope.edit.Status__c == 'Approved';
+        return;
+      }
+    }
+    $scope.edit = null;
+  }
+  $scope.save = function(status) {
+    $scope.edit.Status__c = status;
+    MobileTimecardController.save($scope.edit,
+      function(result, event) {
+        if (event.status) {
+          $location.path('/');
+          $scope.edit = null;
+          $rootScope.$apply();
+        }
+      }, { escape: false });
+  }
+}
+</script>
+<apex:outputPanel html-ng-app=""
+  html-ng-controller="MobileTimecardCtrl" styleClass="container-fluid">
+<div class="row-fluid">
+  <div class="span3">
+    <div class="well sidebar-nav">
+      <ul class="nav nav-list">
+        <li ng-class="navClass('{{timecard.Id}}')"
+         ng-repeat="timecard in timecards">
+          <a ng-click="nav('{{timecard.Id}}')">
+{{timecard.Project__r.Name}}:
+{{timecard.Week_Ending__c | date:'M/d/yyyy'}}
+            <br /><span class="label">{{timecard.Status__c}}</span>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="span9">
+    <div class="row-fluid">
+      <div class="span12" ng-show="edit != null">
+<form><fieldset>
+  <legend>Timecard for {{edit.Project__r.Name}},
+   Week Ending {{edit.Week_Ending__c | date:'M/d/yyyy'}}
+  </legend>
+  <div class="control-group">
+    <div class="controls">
+      <input type="number" ng-model="edit.Monday_Hours__c"
+        placeholder="M" ng-readonly="readOnly"></input>
+      <input type="number" ng-model="edit.Tuesday_Hours__c"
+        placeholder="T" ng-readonly="readOnly"></input>
+      <input type="number" ng-model="edit.Wednesday_Hours__c"
+        placeholder="W" ng-readonly="readOnly"></input>
+      <input type="number" ng-model="edit.Thursday_Hours__c"
+        placeholder="Th" ng-readonly="readOnly"></input>
+      <input type="number" ng-model="edit.Friday_Hours__c"
+        placeholder="F" ng-readonly="readOnly"></input>
+<label>Total Hours: {{edit.Monday_Hours__c + edit.Tuesday_Hours__c +
+edit.Wednesday_Hours__c + edit.Thursday_Hours__c +
+edit.Friday_Hours__c}}</label>
+      <div ng-hide="readOnly">
+        <button ng-click="save('Saved')" type="submit"
+          class="btn">Save</button>
+        <button ng-click="save('Submitted')" type="submit"
+          class="btn">Submit</button>
+      </div>
+    </div>
+  </div>
+</fieldset>
+</form>
+      </div>
+      <div class="span12" ng-show="edit == null">
+      Please select a timecard to edit it.
+      </div>
+    </div>
+  </div>
+</div>
+</apex:outputPanel>
+<script
+src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular.min.js">
+</script>
+</body>
+</apex:page>
