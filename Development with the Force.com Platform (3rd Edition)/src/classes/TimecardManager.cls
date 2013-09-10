@@ -1,4 +1,4 @@
-public class TimecardManager {
+public with sharing class TimecardManager {
   public class TimecardException extends Exception {}
   public static void handleTimecardChange(List<Timecard__c> oldTimecards,
     List<Timecard__c> newTimecards) {

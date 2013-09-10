@@ -26,7 +26,9 @@ public class MyPageController7_18 {
     soql = soql.substring(0, soql.length() - 2);
     soql += ' FROM ' + selectedObject;
     soql += ' ORDER BY LastModifiedDate DESC LIMIT 1';
-  	record = Database.query(soql);
+    try {
+      record = Database.query(soql);
+    } catch (QueryException e) {}
   	return null;
   }	
   public Component.Apex.Detail getComponent() {

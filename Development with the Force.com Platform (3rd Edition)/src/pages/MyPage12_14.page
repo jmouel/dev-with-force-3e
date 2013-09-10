@@ -1,4 +1,4 @@
-<apex:page controller="MyPageController12_15">
+<apex:page controller="MyPageController12_13">
 <style>
 img { margin: 4px; width: 25px; }
 .actor { font-weight: bold; }

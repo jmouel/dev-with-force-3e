@@ -1,7 +1,7 @@
 <apex:page controller="MyPageController11_1">
   <apex:form id="form">
     <apex:includeScript value="{!URLFOR($Resource.cometd,
-      'cometd.js')}"/>
+      'Cometd.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.cometd,
       'jquery-1.5.1.js')}"/>
     <apex:includeScript value="{!URLFOR($Resource.cometd,
